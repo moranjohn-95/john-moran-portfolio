@@ -1,1 +1,52 @@
+/* ==============================
+   CSS Reset
+   ============================== */
+
+/* Use a predictable box model across all elements. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove browser default spacing. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Improve text rendering without setting project typography yet. */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Make embedded media responsive by default. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Keep form controls aligned with surrounding typography. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove list styling only when a list is explicitly marked for reset. */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
 /* Inter and Poppins will be used throughout the portfolio typography system. */
