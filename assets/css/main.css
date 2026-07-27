@@ -221,3 +221,228 @@ body {
   background-color: var(--color-primary-hover);
   color: var(--color-text-primary);
 }
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100svh - 4.5rem);
+  padding-block: 6rem 4.5rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  align-items: center;
+  gap: 4.5rem;
+  min-height: calc(100svh - 15rem);
+}
+
+.hero-content {
+  max-width: 46rem;
+}
+
+.hero-eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  color: var(--color-text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  margin-top: 0.75rem;
+  color: var(--color-text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-subtitle span {
+  color: var(--color-primary);
+}
+
+.hero-description {
+  max-width: 39rem;
+  margin-top: 1.5rem;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.125rem;
+  padding-inline: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-button-primary {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.hero-button-primary:hover,
+.hero-button-primary:focus-visible {
+  border-color: var(--color-primary-hover);
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-primary);
+}
+
+.hero-button-secondary {
+  border-color: var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-primary);
+}
+
+.hero-button-secondary:hover,
+.hero-button-secondary:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.hero-scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-scroll:hover,
+.hero-scroll:focus-visible {
+  color: var(--color-primary);
+}
+
+.hero-scroll-icon {
+  position: relative;
+  width: 1rem;
+  height: 1.75rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.hero-scroll-icon::before {
+  position: absolute;
+  top: 0.4rem;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: currentColor;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.hero-media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-media::before {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  width: 104%;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 5.5rem rgba(56, 189, 248, 0.14);
+  content: "";
+  opacity: 0.5;
+  transform: translateX(-47%);
+}
+
+.hero-image {
+  position: relative;
+  width: min(100%, 25rem);
+  aspect-ratio: 6 / 7;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+@media (max-width: 62rem) {
+  .hero {
+    min-height: auto;
+    padding-block: 4rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 40rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+
+  .hero-media {
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 40rem) {
+  .hero {
+    padding-block: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-scroll {
+    margin-top: 2.5rem;
+  }
+}

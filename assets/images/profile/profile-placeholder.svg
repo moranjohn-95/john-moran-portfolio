@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 840" role="img" aria-labelledby="title description">
+  <title id="title">Profile image placeholder</title>
+  <desc id="description">A simple professional portrait placeholder for John Moran.</desc>
+  <rect width="720" height="840" fill="#1E293B"/>
+  <circle cx="360" cy="270" r="120" fill="#334155"/>
+  <path d="M160 710c24-148 124-230 200-230s176 82 200 230" fill="#334155"/>
+  <path d="M210 710c28-112 104-172 150-172s122 60 150 172" fill="#0F172A" opacity="0.48"/>
+  <circle cx="360" cy="270" r="118" fill="none" stroke="#38BDF8" stroke-width="4" opacity="0.45"/>
+</svg>
