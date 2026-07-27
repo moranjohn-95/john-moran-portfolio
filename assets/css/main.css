@@ -52,6 +52,34 @@ ol[role="list"] {
 /* Inter and Poppins will be used throughout the portfolio typography system. */
 
 /* =========================
+   Design Tokens - Colours
+========================= */
+
+:root {
+  /* Backgrounds */
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-light: #334155;
+
+  /* Primary Brand */
+  --color-primary: #38BDF8;
+  --color-primary-hover: #0EA5E9;
+
+  /* Text */
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+
+  /* Borders */
+  --color-border: #334155;
+
+  /* Status */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+}
+
+/* =========================
    Layout Utilities
 ========================= */
 
