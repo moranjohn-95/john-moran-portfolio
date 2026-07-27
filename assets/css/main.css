@@ -50,3 +50,20 @@ ol[role="list"] {
 }
 
 /* Inter and Poppins will be used throughout the portfolio typography system. */
+
+/* =========================
+   Layout Utilities
+========================= */
+
+.container {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.section-inner {
+  width: 100%;
+}
