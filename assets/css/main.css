@@ -15,14 +15,9 @@
   padding: 0;
 }
 
-/* Improve text rendering without setting project typography yet. */
+/* Improve text rendering. */
 html {
   -webkit-text-size-adjust: 100%;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 /* Make embedded media responsive by default. */
@@ -77,6 +72,26 @@ ol[role="list"] {
   --color-success: #22C55E;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
+}
+
+/* =========================
+   Global Foundation
+========================= */
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* =========================
