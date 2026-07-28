@@ -459,7 +459,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 5rem;
+  gap: 5.5rem;
 }
 
 .about-content {
@@ -513,11 +513,15 @@ body {
   gap: 1.5rem;
 }
 
+.about-cards > li {
+  display: flex;
+}
+
 .about-card {
   display: flex;
+  width: 100%;
   min-height: 17rem;
   flex-direction: column;
-  justify-content: space-between;
   padding: 2.5rem 2.25rem;
   border: 1px solid rgba(51, 65, 85, 0.82);
   border-radius: 1rem;
@@ -556,13 +560,26 @@ body {
   margin-top: 2rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.875rem, 3vw, 2.75rem);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.12;
+}
+
+.about-card h3 span,
+.about-card p span {
+  display: block;
+}
+
+.about-card .about-card-title-compact {
+  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+}
+
+.about-card .about-card-title-compact + p {
+  margin-top: 0.5rem;
 }
 
 .about-card p {
-  margin-top: 1rem;
+  margin-top: 0.625rem;
   color: var(--color-text-secondary);
   font-size: 1.25rem;
   line-height: 1.4;
@@ -606,7 +623,11 @@ body {
   }
 
   .about-card h3 {
-    font-size: 2.25rem;
+    font-size: 2rem;
+  }
+
+  .about-card .about-card-title-compact {
+    font-size: 1.875rem;
   }
 
   .about-card p {
