@@ -728,14 +728,39 @@ body {
   background-color: rgba(2, 6, 23, 0.7);
 }
 
-.project-preview-image {
+.project-preview::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(56, 189, 248, 0.16), transparent 26%),
+    linear-gradient(145deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.94));
+  content: "";
+}
+
+.project-preview-image,
+.project-preview-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.project-preview-image {
+  z-index: 1;
+  color: transparent;
+  font-size: 0;
+}
+
+.project-preview-video {
+  z-index: 2;
+  display: none;
+}
+
 .project-play-icon {
   position: absolute;
+  z-index: 3;
   top: 50%;
   left: 50%;
   display: grid;
