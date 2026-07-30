@@ -51,3 +51,15 @@ if (videoPreview) {
     reducedMotionQuery.addEventListener("change", resetVideoPreview);
   }
 }
+
+document.querySelectorAll(".project-card-thumbnail").forEach((thumbnail) => {
+  const hideBrokenThumbnail = () => {
+    thumbnail.hidden = true;
+  };
+
+  if (thumbnail.complete && thumbnail.naturalWidth === 0) {
+    hideBrokenThumbnail();
+  }
+
+  thumbnail.addEventListener("error", hideBrokenThumbnail);
+});

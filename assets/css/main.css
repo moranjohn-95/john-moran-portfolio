@@ -968,6 +968,15 @@ body {
   background-color: rgba(248, 250, 252, 0.22);
 }
 
+.project-card-thumbnail {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
 .project-card-media--precision {
   background:
     radial-gradient(circle at 80% 78%, rgba(56, 189, 248, 0.32), transparent 20%),
