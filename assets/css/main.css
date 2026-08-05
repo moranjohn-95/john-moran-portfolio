@@ -926,6 +926,13 @@ body {
   gap: 1.25rem;
 }
 
+@media (min-width: 62.0625rem) {
+  .projects-grid {
+    width: min(calc(100vw - 2rem), 78rem);
+    justify-self: center;
+  }
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -940,82 +947,38 @@ body {
   transform: translateY(-0.25rem);
 }
 
-.project-card-media {
+.project-card .project-card-media {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   flex: 0 0 auto;
-  aspect-ratio: 16 / 9;
+  height: 16.25rem;
   overflow: hidden;
-  border: 1px solid rgba(51, 65, 85, 0.82);
   border-radius: 0.75rem;
-  background-color: rgba(2, 6, 23, 0.7);
 }
 
-.project-card-media::before,
-.project-card-media::after {
-  position: absolute;
-  content: "";
-}
-
-.project-card-media::before {
-  inset: 0.85rem;
-  border-radius: 0.5rem;
-  background-color: rgba(15, 23, 42, 0.88);
-}
-
-.project-card-media::after {
-  right: 1.15rem;
-  bottom: 1rem;
-  left: 1.15rem;
-  height: 0.5rem;
-  border-radius: 999px;
-  background-color: rgba(248, 250, 252, 0.22);
+.project-card .project-card-media::before,
+.project-card .project-card-media::after {
+  display: none;
 }
 
 .project-card-thumbnail {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  display: block;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   border-radius: inherit;
-  object-fit: cover;
+  background: transparent;
+  object-fit: contain;
+  object-position: center;
 }
 
-.project-card-media--precision {
-  background:
-    radial-gradient(circle at 80% 78%, rgba(56, 189, 248, 0.32), transparent 20%),
-    linear-gradient(145deg, rgba(2, 6, 23, 0.96), rgba(30, 41, 59, 0.9));
-}
-
-.project-card-media--budget {
-  background:
-    radial-gradient(circle at 78% 68%, rgba(34, 197, 94, 0.35), transparent 18%),
-    linear-gradient(145deg, rgba(2, 6, 23, 0.96), rgba(22, 101, 52, 0.36));
-}
-
-.project-card-media--brio {
-  background:
-    radial-gradient(circle at 78% 72%, rgba(245, 158, 11, 0.42), transparent 18%),
-    linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(120, 53, 15, 0.48));
-}
-
-.project-card-media--spanish {
-  background:
-    radial-gradient(circle at 76% 34%, rgba(34, 197, 94, 0.32), transparent 18%),
-    linear-gradient(145deg, rgba(2, 6, 23, 0.96), rgba(21, 128, 61, 0.42));
-}
-
-.project-card-media--coming-soon {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(148, 163, 184, 0.22), transparent 22%),
-    linear-gradient(145deg, rgba(2, 6, 23, 0.96), rgba(30, 41, 59, 0.86));
-}
-
-.project-card-media--portfolio {
-  background:
-    radial-gradient(circle at 28% 36%, rgba(56, 189, 248, 0.35), transparent 18%),
-    linear-gradient(145deg, rgba(2, 6, 23, 0.96), rgba(15, 23, 42, 0.92));
+.project-card .project-card-media[role="img"] {
+  border: 1px solid rgba(51, 65, 85, 0.64);
+  background-color: rgba(2, 6, 23, 0.38);
+  box-shadow: 0 1rem 2rem rgba(2, 6, 23, 0.24);
 }
 
 .project-card-content {
@@ -1035,6 +998,7 @@ body {
 
 .project-card p {
   margin-top: 0.75rem;
+  min-height: calc(0.875rem * 1.65 * 4);
   color: var(--color-text-secondary);
   font-size: 0.875rem;
   line-height: 1.65;
@@ -1074,7 +1038,7 @@ body {
 
 .project-status-badge {
   align-self: flex-start;
-  margin-top: 1rem;
+  margin-top: 1.1rem;
   padding: 0.35rem 0.65rem;
   border: 1px solid rgba(51, 65, 85, 0.82);
   border-radius: 999px;
