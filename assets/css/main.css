@@ -678,18 +678,21 @@ body {
 ========================= */
 
 .projects,
-.skills {
+.skills,
+.experience {
   padding-block: 6rem 7rem;
 }
 
 .projects-container,
-.skills-container {
+.skills-container,
+.experience-container {
   display: grid;
   gap: 1.5rem;
 }
 
 .projects-header,
-.skills-header {
+.skills-header,
+.experience-header {
   max-width: 44rem;
   margin-inline: auto;
   margin-bottom: 1rem;
@@ -698,7 +701,8 @@ body {
 
 .projects-label,
 .featured-project-label,
-.skills-label {
+.skills-label,
+.experience-label {
   color: var(--color-primary);
   font-size: 0.875rem;
   font-weight: 600;
@@ -706,7 +710,8 @@ body {
 }
 
 .projects-title,
-.skills-title {
+.skills-title,
+.experience-title {
   margin-top: 0.5rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
@@ -716,12 +721,14 @@ body {
 }
 
 .projects-title span,
-.skills-title span {
+.skills-title span,
+.experience-title span {
   color: var(--color-primary);
 }
 
 .projects-title::after,
-.skills-title::after {
+.skills-title::after,
+.experience-title::after {
   display: block;
   width: 3rem;
   height: 2px;
@@ -731,7 +738,8 @@ body {
 }
 
 .projects-intro,
-.skills-intro {
+.skills-intro,
+.experience-intro {
   max-width: 38rem;
   margin: 1.5rem auto 0;
   color: var(--color-text-secondary);
@@ -1352,6 +1360,158 @@ body {
   transform: scale(1.12);
 }
 
+/* =========================
+   Experience Section
+========================= */
+
+.experience-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-milestone {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.experience-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+}
+
+.experience-marker::before {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: 2.75rem;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 40%, transparent),
+    transparent
+  );
+  box-shadow: 0 0 1rem color-mix(in srgb, var(--color-primary) 20%, transparent);
+  content: "";
+}
+
+.experience-year,
+.experience-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.experience-year {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.experience-icon {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 32%, transparent);
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-primary-hover) 8%, transparent);
+  color: var(--color-primary);
+  box-shadow: 0 0 1.5rem color-mix(in srgb, var(--color-primary) 12%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.experience-icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.experience-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-background) 42%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.experience-milestone:hover .experience-card,
+.experience-milestone:focus-within .experience-card {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow:
+    0 1rem 2rem color-mix(in srgb, var(--color-background) 32%, transparent),
+    0 0 1.75rem color-mix(in srgb, var(--color-primary) 10%, transparent);
+  transform: translateY(-0.1875rem);
+}
+
+.experience-milestone:hover .experience-icon,
+.experience-milestone:focus-within .experience-icon {
+  border-color: color-mix(in srgb, var(--color-primary) 62%, transparent);
+  box-shadow: 0 0 1.75rem color-mix(in srgb, var(--color-primary) 24%, transparent);
+  transform: translateY(-0.125rem);
+}
+
+.experience-card h3 {
+  color: var(--color-text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.experience-role,
+.experience-organization,
+.experience-date {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.experience-role,
+.experience-organization {
+  margin-top: 0.5rem;
+}
+
+.experience-date {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.experience-list {
+  display: grid;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+  padding-left: 1.1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.experience-list li::marker {
+  color: var(--color-primary);
+}
+
 @keyframes skillsSectionFadeIn {
   from {
     opacity: 0;
@@ -1403,11 +1563,24 @@ body {
   .skills-card:focus-within .skills-card-icon svg {
     transform: none;
   }
+
+  .experience-card,
+  .experience-icon {
+    transition: none;
+  }
+
+  .experience-milestone:hover .experience-card,
+  .experience-milestone:focus-within .experience-card,
+  .experience-milestone:hover .experience-icon,
+  .experience-milestone:focus-within .experience-icon {
+    transform: none;
+  }
 }
 
 @media (max-width: 62rem) {
   .projects,
-  .skills {
+  .skills,
+  .experience {
     padding-block: 5rem;
   }
 
@@ -1431,6 +1604,15 @@ body {
     gap: 1.25rem;
     padding: 2rem;
   }
+
+  .experience-timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -1441,24 +1623,75 @@ body {
 
 @media (max-width: 40rem) {
   .projects,
-  .skills {
+  .skills,
+  .experience {
     padding-block: 4rem;
   }
 
   .projects-container,
-  .skills-container {
+  .skills-container,
+  .experience-container {
     gap: 1.25rem;
   }
 
   .projects-title,
-  .skills-title {
+  .skills-title,
+  .experience-title {
     font-size: 2.75rem;
   }
 
   .projects-intro,
   .skills-intro,
+  .experience-intro,
   .featured-project-description {
     font-size: 1rem;
+  }
+
+  .experience-timeline {
+    position: relative;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .experience-timeline::before {
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    left: 1.5rem;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      color-mix(in srgb, var(--color-primary) 40%, transparent),
+      transparent
+    );
+    box-shadow: 0 0 1rem color-mix(in srgb, var(--color-primary) 20%, transparent);
+    content: "";
+  }
+
+  .experience-milestone {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .experience-marker {
+    gap: 0.625rem;
+    padding-bottom: 0;
+  }
+
+  .experience-marker::before {
+    display: none;
+  }
+
+  .experience-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
   }
 
   .skills-card {
