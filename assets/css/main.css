@@ -1111,7 +1111,12 @@ body {
   gap: 1.25rem;
 }
 
+.skills {
+  animation: skillsSectionFadeIn 0.6s ease both;
+}
+
 .skills-card {
+  --card-delay: 0s;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: start;
@@ -1120,7 +1125,26 @@ body {
   border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
   border-radius: 1rem;
   background-color: color-mix(in srgb, var(--color-background) 42%, transparent);
+  opacity: 0;
+  animation: skillsCardSlideUp 0.55s ease both;
+  animation-delay: var(--card-delay);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.skills-card:nth-child(1) {
+  --card-delay: 0.08s;
+}
+
+.skills-card:nth-child(2) {
+  --card-delay: 0.16s;
+}
+
+.skills-card:nth-child(3) {
+  --card-delay: 0.24s;
+}
+
+.skills-card:nth-child(4) {
+  --card-delay: 0.32s;
 }
 
 .skills-card:hover,
@@ -1178,21 +1202,143 @@ body {
 }
 
 .skills-card .project-tech-list li {
+  --badge-offset: 0.24s;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  opacity: 0;
+  animation: skillsBadgeReveal 0.42s ease both;
+  animation-delay: calc(var(--card-delay) + var(--badge-offset));
   transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.skills-card .project-tech-list li::before {
-  width: 0.45rem;
-  height: 0.45rem;
+.skills-card .project-tech-list li:nth-child(2) {
+  --badge-offset: 0.28s;
+}
+
+.skills-card .project-tech-list li:nth-child(3) {
+  --badge-offset: 0.32s;
+}
+
+.skills-card .project-tech-list li:nth-child(4) {
+  --badge-offset: 0.36s;
+}
+
+.skills-card .project-tech-list li:nth-child(5) {
+  --badge-offset: 0.4s;
+}
+
+.skills-card .project-tech-list li:nth-child(6) {
+  --badge-offset: 0.44s;
+}
+
+.skills-card .project-tech-list li:nth-child(7) {
+  --badge-offset: 0.48s;
+}
+
+.skills-card .project-tech-list li:nth-child(8) {
+  --badge-offset: 0.52s;
+}
+
+.skills-card .project-tech-list li:nth-child(9) {
+  --badge-offset: 0.56s;
+}
+
+.skill-badge-icon {
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
   flex: 0 0 auto;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  box-shadow: 0 0 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
-  content: "";
+  background: var(--skill-icon) center / contain no-repeat;
   transition: transform 0.2s ease;
+}
+
+.skill-badge-icon--python {
+  --skill-icon: url("https://cdn.simpleicons.org/python");
+}
+
+.skill-badge-icon--javascript {
+  --skill-icon: url("https://cdn.simpleicons.org/javascript");
+}
+
+.skill-badge-icon--sql {
+  --skill-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2338BDF8' viewBox='0 0 24 24'%3E%3Cpath d='M12 3C7.58 3 4 4.57 4 6.5v11C4 19.43 7.58 21 12 21s8-1.57 8-3.5v-11C20 4.57 16.42 3 12 3Zm0 2c3.76 0 6 1.15 6 1.5S15.76 8 12 8 6 6.85 6 6.5 8.24 5 12 5Zm0 5c2.39 0 4.61-.46 6-1.27v3.77c0 .35-2.24 1.5-6 1.5s-6-1.15-6-1.5V8.73C7.39 9.54 9.61 10 12 10Zm0 9c-3.76 0-6-1.15-6-1.5v-2.77C7.39 15.54 9.61 16 12 16s4.61-.46 6-1.27v2.77c0 .35-2.24 1.5-6 1.5Z'/%3E%3C/svg%3E");
+}
+
+.skill-badge-icon--html5 {
+  --skill-icon: url("https://cdn.simpleicons.org/html5");
+}
+
+.skill-badge-icon--css3 {
+  --skill-icon: url("https://cdn.simpleicons.org/css");
+}
+
+.skill-badge-icon--django {
+  --skill-icon: url("https://cdn.simpleicons.org/django");
+}
+
+.skill-badge-icon--streamlit {
+  --skill-icon: url("https://cdn.simpleicons.org/streamlit");
+}
+
+.skill-badge-icon--bootstrap {
+  --skill-icon: url("https://cdn.simpleicons.org/bootstrap");
+}
+
+.skill-badge-icon--pandas {
+  --skill-icon: url("https://cdn.simpleicons.org/pandas");
+}
+
+.skill-badge-icon--numpy {
+  --skill-icon: url("https://cdn.simpleicons.org/numpy");
+}
+
+.skill-badge-icon--scikitlearn {
+  --skill-icon: url("https://cdn.simpleicons.org/scikitlearn");
+}
+
+.skill-badge-icon--plotly {
+  --skill-icon: url("https://cdn.simpleicons.org/plotly");
+}
+
+.skill-badge-icon--matplotlib {
+  --skill-icon: url("https://cdn.simpleicons.org/matplotlib");
+}
+
+.skill-badge-icon--chartjs {
+  --skill-icon: url("https://cdn.simpleicons.org/chartdotjs");
+}
+
+.skill-badge-icon--postgresql {
+  --skill-icon: url("https://cdn.simpleicons.org/postgresql");
+}
+
+.skill-badge-icon--sqlite {
+  --skill-icon: url("https://cdn.simpleicons.org/sqlite");
+}
+
+.skill-badge-icon--google-sheets {
+  --skill-icon: url("https://cdn.simpleicons.org/googlesheets");
+}
+
+.skill-badge-icon--git {
+  --skill-icon: url("https://cdn.simpleicons.org/git");
+}
+
+.skill-badge-icon--github {
+  --skill-icon: url("https://cdn.simpleicons.org/github/FFFFFF");
+}
+
+.skill-badge-icon--vscode {
+  --skill-icon: url("https://cdn.simpleicons.org/visualstudiocode");
+}
+
+.skill-badge-icon--jupyter {
+  --skill-icon: url("https://cdn.simpleicons.org/jupyter");
+}
+
+.skill-badge-icon--heroku {
+  --skill-icon: url("https://cdn.simpleicons.org/heroku");
 }
 
 .skills-card .project-tech-list li:hover {
@@ -1202,8 +1348,61 @@ body {
   transform: translateY(-0.125rem);
 }
 
-.skills-card .project-tech-list li:hover::before {
-  transform: scale(1.18);
+.skills-card .project-tech-list li:hover .skill-badge-icon {
+  transform: scale(1.12);
+}
+
+@keyframes skillsSectionFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes skillsCardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillsBadgeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills,
+  .skills-card,
+  .skills-card .project-tech-list li {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .skills-card:hover,
+  .skills-card:focus-within,
+  .skills-card .project-tech-list li:hover,
+  .skills-card .project-tech-list li:hover .skill-badge-icon,
+  .skills-card:hover .skills-card-icon svg,
+  .skills-card:focus-within .skills-card-icon svg {
+    transform: none;
+  }
 }
 
 @media (max-width: 62rem) {
