@@ -677,16 +677,19 @@ body {
    Portfolio Section
 ========================= */
 
-.projects {
+.projects,
+.skills {
   padding-block: 6rem 7rem;
 }
 
-.projects-container {
+.projects-container,
+.skills-container {
   display: grid;
   gap: 1.5rem;
 }
 
-.projects-header {
+.projects-header,
+.skills-header {
   max-width: 44rem;
   margin-inline: auto;
   margin-bottom: 1rem;
@@ -694,14 +697,16 @@ body {
 }
 
 .projects-label,
-.featured-project-label {
+.featured-project-label,
+.skills-label {
   color: var(--color-primary);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0;
 }
 
-.projects-title {
+.projects-title,
+.skills-title {
   margin-top: 0.5rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
@@ -710,11 +715,13 @@ body {
   line-height: 1.05;
 }
 
-.projects-title span {
+.projects-title span,
+.skills-title span {
   color: var(--color-primary);
 }
 
-.projects-title::after {
+.projects-title::after,
+.skills-title::after {
   display: block;
   width: 3rem;
   height: 2px;
@@ -723,7 +730,8 @@ body {
   content: "";
 }
 
-.projects-intro {
+.projects-intro,
+.skills-intro {
   max-width: 38rem;
   margin: 1.5rem auto 0;
   color: var(--color-text-secondary);
@@ -1094,8 +1102,113 @@ body {
   line-height: 1;
 }
 
+/* =========================
+   Skills Section
+========================= */
+
+.skills-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skills-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  padding: 2.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-background) 42%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.skills-card:hover,
+.skills-card:focus-within {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow:
+    0 1rem 2rem color-mix(in srgb, var(--color-background) 32%, transparent),
+    0 0 1.75rem color-mix(in srgb, var(--color-primary) 10%, transparent);
+  transform: translateY(-0.1875rem);
+}
+
+.skills-card-icon {
+  display: inline-flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, transparent);
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-primary-hover) 8%, transparent);
+  color: var(--color-primary);
+}
+
+.skills-card-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  transition: transform 0.2s ease;
+}
+
+.skills-card:hover .skills-card-icon svg,
+.skills-card:focus-within .skills-card-icon svg {
+  transform: scale(1.05);
+}
+
+.skills-card-content {
+  min-width: 0;
+}
+
+.skills-card h3 {
+  color: var(--color-text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.skills-card .project-tech-list {
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.skills-card .project-tech-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.skills-card .project-tech-list li::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0.75rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+  content: "";
+  transition: transform 0.2s ease;
+}
+
+.skills-card .project-tech-list li:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow: 0 0.5rem 1.25rem color-mix(in srgb, var(--color-primary) 9%, transparent);
+  color: var(--color-text-primary);
+  transform: translateY(-0.125rem);
+}
+
+.skills-card .project-tech-list li:hover::before {
+  transform: scale(1.18);
+}
+
 @media (max-width: 62rem) {
-  .projects {
+  .projects,
+  .skills {
     padding-block: 5rem;
   }
 
@@ -1110,6 +1223,15 @@ body {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .skills-grid {
+    gap: 1rem;
+  }
+
+  .skills-card {
+    gap: 1.25rem;
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -1119,21 +1241,41 @@ body {
 }
 
 @media (max-width: 40rem) {
-  .projects {
+  .projects,
+  .skills {
     padding-block: 4rem;
   }
 
-  .projects-container {
+  .projects-container,
+  .skills-container {
     gap: 1.25rem;
   }
 
-  .projects-title {
+  .projects-title,
+  .skills-title {
     font-size: 2.75rem;
   }
 
   .projects-intro,
+  .skills-intro,
   .featured-project-description {
     font-size: 1rem;
+  }
+
+  .skills-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .skills-card-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .skills-card-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .featured-project {
