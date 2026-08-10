@@ -575,13 +575,138 @@
       </div>
     </section>
 
-    <section id="contact">
-      <!-- Contact Section -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-container">
+        <header class="contact-header">
+          <p class="contact-label">CONTACT</p>
+          <h2 class="contact-title" id="contact-title">Let's Work Together<span>.</span></h2>
+          <p class="contact-intro">
+            I'm always open to discussing new opportunities, collaborations or interesting software projects.
+          </p>
+        </header>
+
+        <div class="contact-layout">
+          <div class="contact-cards" aria-label="Contact options">
+            <article class="contact-card" aria-labelledby="contact-linkedin-title">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M6.94 8.9H3.75V20h3.19V8.9Z"/>
+                  <path d="M5.35 4a1.85 1.85 0 1 0 0 3.7 1.85 1.85 0 0 0 0-3.7Z"/>
+                  <path d="M10.1 8.9h3.05v1.52h.04c.43-.82 1.47-1.68 3.03-1.68 3.24 0 3.84 2.13 3.84 4.9V20h-3.18v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.47-2.17 2.98V20H10.1V8.9Z"/>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h3 id="contact-linkedin-title">LinkedIn</h3>
+                <p>Let's connect! I'm open to new opportunities and professional collaborations.</p>
+                <a href="#" aria-label="View John Moran on LinkedIn">View my LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="contact-card" aria-labelledby="contact-github-title">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.19-3.37-1.19-.45-1.14-1.11-1.45-1.11-1.45-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.04c.85 0 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h3 id="contact-github-title">GitHub</h3>
+                <p>Explore my projects, code and ongoing software development work.</p>
+                <a href="#" aria-label="View John Moran on GitHub">View my GitHub</a>
+              </div>
+            </article>
+
+            <article class="contact-card" aria-labelledby="contact-cv-title">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M7 3h7l4 4v14H7V3Z"/>
+                  <path d="M14 3v5h5"/>
+                  <path d="M10 13h6"/>
+                  <path d="M10 17h4"/>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h3 id="contact-cv-title">View My CV</h3>
+                <p>Download my CV to learn more about my experience, education and technical skills.</p>
+                <a href="documents/John-Moran-CV.pdf" download aria-label="Download John Moran's CV">Download CV</a>
+              </div>
+            </article>
+          </div>
+
+          <article class="contact-email-card" aria-labelledby="contact-email-title">
+            <header class="contact-email-header">
+              <h3 id="contact-email-title">Send Me an Email</h3>
+              <p id="contact-email-description">
+                Have a question or want to discuss an opportunity?
+                Send me a message and I'll get back to you.
+              </p>
+            </header>
+
+            <form class="contact-form" action="#" method="post" aria-describedby="contact-email-description">
+              <div class="contact-form-field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name">
+              </div>
+
+              <div class="contact-form-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email">
+              </div>
+
+              <div class="contact-form-field">
+                <label for="contact-subject">Subject</label>
+                <input id="contact-subject" name="subject" type="text">
+              </div>
+
+              <div class="contact-form-field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="6"></textarea>
+              </div>
+
+              <button class="contact-form-submit" type="submit">Send Message</button>
+            </form>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <!-- Footer Section -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        <p>&copy; 2026 John Moran</p>
+        <p>Built with HTML, CSS &amp; JavaScript</p>
+        <p>Designed &amp; Developed by John Moran</p>
+      </div>
+
+      <nav class="footer-social" aria-label="Footer social links">
+        <ul class="footer-social-list" role="list">
+          <li>
+            <a href="#" aria-label="View John Moran on GitHub">
+              <svg class="footer-social-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.19-3.37-1.19-.45-1.14-1.11-1.45-1.11-1.45-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.04c.85 0 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="View John Moran on LinkedIn">
+              <svg class="footer-social-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M6.94 8.9H3.75V20h3.19V8.9Z"/>
+                <path d="M5.35 4a1.85 1.85 0 1 0 0 3.7 1.85 1.85 0 0 0 0-3.7Z"/>
+                <path d="M10.1 8.9h3.05v1.52h.04c.43-.82 1.47-1.68 3.03-1.68 3.24 0 3.84 2.13 3.84 4.9V20h-3.18v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.47-2.17 2.98V20H10.1V8.9Z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" aria-label="Go to the contact form">
+              <svg class="footer-social-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M4 6h16v12H4V6Z"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>
