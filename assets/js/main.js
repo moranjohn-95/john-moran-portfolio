@@ -73,6 +73,7 @@ if (contactForm) {
   const successMessage = "Thank you for getting in touch! Your message has been sent successfully. I'll get back to you as soon as possible.";
   const errorMessage = "Something went wrong while sending your message. Please try again.";
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const accessKeyPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   const defaultSubmitText = submitText ? submitText.textContent : "Send Message";
   const requiredFields = [
     {
@@ -199,13 +200,37 @@ if (contactForm) {
     };
   };
 
-  const submitContactForm = async () => {
+  const getContactFormPayload = () => {
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData);
+
+    payload.access_key = typeof payload.access_key === "string" ? payload.access_key.trim() : "";
+
+    return payload;
+  };
+
+  const validateWeb3FormsConfiguration = (payload) => {
+    if (!accessKeyPattern.test(payload.access_key)) {
+      return {
+        isValid: false,
+        message: "The contact form is not configured correctly. Please add a valid Web3Forms access key.",
+      };
+    }
+
+    return {
+      isValid: true,
+      message: "",
+    };
+  };
+
+  const submitContactForm = async (payload) => {
     const response = await fetch(contactForm.action, {
       method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: new FormData(contactForm),
+      body: JSON.stringify(payload),
     });
     const result = await response.json().catch(() => ({}));
 
@@ -237,10 +262,18 @@ if (contactForm) {
       return;
     }
 
+    const payload = getContactFormPayload();
+    const configuration = validateWeb3FormsConfiguration(payload);
+
+    if (!configuration.isValid) {
+      setFeedback(configuration.message, "error");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      await submitContactForm();
+      await submitContactForm(payload);
       contactForm.reset();
       clearFieldValidity();
       setFeedback(successMessage, "success");
