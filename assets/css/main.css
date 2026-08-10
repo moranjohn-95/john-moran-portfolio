@@ -679,20 +679,23 @@ body {
 
 .projects,
 .skills,
-.experience {
+.experience,
+.contact {
   padding-block: 6rem 7rem;
 }
 
 .projects-container,
 .skills-container,
-.experience-container {
+.experience-container,
+.contact-container {
   display: grid;
   gap: 1.5rem;
 }
 
 .projects-header,
 .skills-header,
-.experience-header {
+.experience-header,
+.contact-header {
   max-width: 44rem;
   margin-inline: auto;
   margin-bottom: 1rem;
@@ -702,7 +705,8 @@ body {
 .projects-label,
 .featured-project-label,
 .skills-label,
-.experience-label {
+.experience-label,
+.contact-label {
   color: var(--color-primary);
   font-size: 0.875rem;
   font-weight: 600;
@@ -711,7 +715,8 @@ body {
 
 .projects-title,
 .skills-title,
-.experience-title {
+.experience-title,
+.contact-title {
   margin-top: 0.5rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
@@ -722,13 +727,15 @@ body {
 
 .projects-title span,
 .skills-title span,
-.experience-title span {
+.experience-title span,
+.contact-title span {
   color: var(--color-primary);
 }
 
 .projects-title::after,
 .skills-title::after,
-.experience-title::after {
+.experience-title::after,
+.contact-title::after {
   display: block;
   width: 3rem;
   height: 2px;
@@ -739,7 +746,8 @@ body {
 
 .projects-intro,
 .skills-intro,
-.experience-intro {
+.experience-intro,
+.contact-intro {
   max-width: 38rem;
   margin: 1.5rem auto 0;
   color: var(--color-text-secondary);
@@ -1558,6 +1566,259 @@ body {
   color: var(--color-primary);
 }
 
+/* =========================
+   Contact Section
+========================= */
+
+.contact {
+  opacity: 0;
+  animation: skillsSectionFadeIn 0.6s ease both;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+  align-items: stretch;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-card,
+.contact-email-card {
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-background) 42%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  padding: 2.25rem;
+  opacity: 0;
+  animation: skillsCardSlideUp 0.55s ease both;
+}
+
+.contact-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.contact-card:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.contact-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.contact-email-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem;
+  opacity: 0;
+  animation: skillsCardSlideUp 0.55s ease both;
+  animation-delay: 0.32s;
+}
+
+.contact-card:hover,
+.contact-card:focus-within,
+.contact-email-card:hover,
+.contact-email-card:focus-within {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow:
+    0 1rem 2rem color-mix(in srgb, var(--color-background) 32%, transparent),
+    0 0 1.75rem color-mix(in srgb, var(--color-primary) 10%, transparent);
+  transform: translateY(-0.1875rem);
+}
+
+.contact-card-icon {
+  display: inline-flex;
+  width: 3.75rem;
+  height: 3.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, transparent);
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-primary-hover) 8%, transparent);
+  color: var(--color-primary);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contact-card:hover .contact-card-icon,
+.contact-card:focus-within .contact-card-icon {
+  box-shadow: 0 0 1.5rem color-mix(in srgb, var(--color-primary) 16%, transparent);
+  transform: translateY(-0.125rem);
+}
+
+.contact-card-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.contact-icon-fill {
+  fill: currentColor;
+}
+
+.contact-icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact-card-content {
+  min-width: 0;
+}
+
+.contact-card h3,
+.contact-email-card h3 {
+  color: var(--color-text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.contact-card p,
+.contact-email-card p {
+  margin-top: 0.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.contact-card a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 1.25rem;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-card a:hover,
+.contact-card a:focus-visible {
+  color: var(--color-primary-hover);
+  transform: translateX(0.125rem);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.contact-form-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact-form-field label {
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.contact-form-field input,
+.contact-form-field textarea {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 0.75rem;
+  background-color: color-mix(in srgb, var(--color-surface) 36%, transparent);
+  color: var(--color-text-primary);
+  caret-color: var(--color-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form-field input {
+  min-height: 3.125rem;
+  padding-inline: 1rem;
+}
+
+.contact-form-field textarea {
+  min-height: 9rem;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.contact-form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.site-footer {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+  background-color: var(--color-background);
+  padding-block: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-copy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow: 0 0 1.25rem color-mix(in srgb, var(--color-primary) 12%, transparent);
+  color: var(--color-primary);
+  transform: translateY(-0.125rem);
+}
+
+.footer-social-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 @keyframes experienceTimelineDraw {
   from {
     transform: scaleX(0);
@@ -1655,7 +1916,10 @@ body {
   .experience,
   .experience-card,
   .experience-year,
-  .experience-icon {
+  .experience-icon,
+  .contact,
+  .contact-card,
+  .contact-email-card {
     opacity: 1;
     animation: none;
     transform: none;
@@ -1679,14 +1943,26 @@ body {
   .experience-card,
   .experience-icon,
   .experience-marker::before,
-  .experience-timeline::before {
+  .experience-timeline::before,
+  .contact-card,
+  .contact-email-card,
+  .contact-card-icon,
+  .footer-social a {
     transition: none;
   }
 
   .experience-milestone:hover .experience-card,
   .experience-milestone:focus-within .experience-card,
   .experience-milestone:hover .experience-icon,
-  .experience-milestone:focus-within .experience-icon {
+  .experience-milestone:focus-within .experience-icon,
+  .contact-card:hover,
+  .contact-card:focus-within,
+  .contact-card:hover .contact-card-icon,
+  .contact-card:focus-within .contact-card-icon,
+  .contact-email-card:hover,
+  .contact-email-card:focus-within,
+  .footer-social a:hover,
+  .footer-social a:focus-visible {
     transform: none;
   }
 }
@@ -1694,7 +1970,8 @@ body {
 @media (max-width: 62rem) {
   .projects,
   .skills,
-  .experience {
+  .experience,
+  .contact {
     padding-block: 5rem;
   }
 
@@ -1727,6 +2004,20 @@ body {
   .experience-card {
     padding: 1.5rem;
   }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-cards {
+    gap: 1rem;
+  }
+
+  .contact-card,
+  .contact-email-card {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -1738,25 +2029,29 @@ body {
 @media (max-width: 40rem) {
   .projects,
   .skills,
-  .experience {
+  .experience,
+  .contact {
     padding-block: 4rem;
   }
 
   .projects-container,
   .skills-container,
-  .experience-container {
+  .experience-container,
+  .contact-container {
     gap: 1.25rem;
   }
 
   .projects-title,
   .skills-title,
-  .experience-title {
+  .experience-title,
+  .contact-title {
     font-size: 2.75rem;
   }
 
   .projects-intro,
   .skills-intro,
   .experience-intro,
+  .contact-intro,
   .featured-project-description {
     font-size: 1rem;
   }
@@ -1810,6 +2105,40 @@ body {
 
   .experience-card {
     padding: 1.5rem;
+  }
+
+  .contact-layout {
+    margin-top: 0.5rem;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .contact-card-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .contact-card-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .contact-email-card {
+    padding: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-copy {
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .skills-card {
