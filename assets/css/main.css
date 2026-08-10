@@ -1373,10 +1373,35 @@ body {
   list-style: none;
 }
 
+.experience {
+  opacity: 0;
+  animation: skillsSectionFadeIn 0.6s ease both;
+}
+
 .experience-milestone {
+  --experience-card-y: 0;
+  --experience-icon-y: 0;
+  --experience-icon-scale: 1;
+  --milestone-delay: 0.08s;
   display: flex;
   min-width: 0;
   flex-direction: column;
+}
+
+.experience-milestone:nth-child(2) {
+  --milestone-delay: 0.18s;
+}
+
+.experience-milestone:nth-child(3) {
+  --milestone-delay: 0.28s;
+}
+
+.experience-milestone:nth-child(4) {
+  --milestone-delay: 0.38s;
+}
+
+.experience-milestone:nth-child(5) {
+  --milestone-delay: 0.48s;
 }
 
 .experience-marker {
@@ -1403,6 +1428,10 @@ body {
   );
   box-shadow: 0 0 1rem color-mix(in srgb, var(--color-primary) 20%, transparent);
   content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: experienceTimelineDraw 0.44s ease both;
+  animation-delay: var(--milestone-delay);
 }
 
 .experience-year,
@@ -1418,6 +1447,10 @@ body {
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(0.35rem);
+  animation: experienceNodeReveal 0.36s ease both;
+  animation-delay: calc(var(--milestone-delay) + 0.44s);
 }
 
 .experience-icon {
@@ -1431,6 +1464,10 @@ body {
   background-color: color-mix(in srgb, var(--color-primary-hover) 8%, transparent);
   color: var(--color-primary);
   box-shadow: 0 0 1.5rem color-mix(in srgb, var(--color-primary) 12%, transparent);
+  opacity: 0;
+  transform: translateY(var(--experience-icon-y)) scale(var(--experience-icon-scale));
+  animation: experienceIconReveal 0.36s ease both;
+  animation-delay: calc(var(--milestone-delay) + 0.48s);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -1452,7 +1489,18 @@ body {
   border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
   border-radius: 1rem;
   background-color: color-mix(in srgb, var(--color-background) 42%, transparent);
+  opacity: 0;
+  transform: translateY(var(--experience-card-y));
+  animation: experienceCardReveal 0.55s ease both;
+  animation-delay: calc(var(--milestone-delay) + 0.56s);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.experience-milestone:hover,
+.experience-milestone:focus-within {
+  --experience-card-y: -0.1875rem;
+  --experience-icon-y: -0.125rem;
+  --experience-icon-scale: 1.03;
 }
 
 .experience-milestone:hover .experience-card,
@@ -1461,14 +1509,12 @@ body {
   box-shadow:
     0 1rem 2rem color-mix(in srgb, var(--color-background) 32%, transparent),
     0 0 1.75rem color-mix(in srgb, var(--color-primary) 10%, transparent);
-  transform: translateY(-0.1875rem);
 }
 
 .experience-milestone:hover .experience-icon,
 .experience-milestone:focus-within .experience-icon {
   border-color: color-mix(in srgb, var(--color-primary) 62%, transparent);
   box-shadow: 0 0 1.75rem color-mix(in srgb, var(--color-primary) 24%, transparent);
-  transform: translateY(-0.125rem);
 }
 
 .experience-card h3 {
@@ -1512,6 +1558,62 @@ body {
   color: var(--color-primary);
 }
 
+@keyframes experienceTimelineDraw {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes experienceTimelineDrawVertical {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes experienceNodeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes experienceIconReveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(var(--experience-icon-y)) scale(var(--experience-icon-scale));
+  }
+}
+
+@keyframes experienceCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(var(--experience-card-y));
+  }
+}
+
 @keyframes skillsSectionFadeIn {
   from {
     opacity: 0;
@@ -1549,8 +1651,18 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .skills,
   .skills-card,
-  .skills-card .project-tech-list li {
+  .skills-card .project-tech-list li,
+  .experience,
+  .experience-card,
+  .experience-year,
+  .experience-icon {
     opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .experience-marker::before,
+  .experience-timeline::before {
     animation: none;
     transform: none;
   }
@@ -1565,7 +1677,9 @@ body {
   }
 
   .experience-card,
-  .experience-icon {
+  .experience-icon,
+  .experience-marker::before,
+  .experience-timeline::before {
     transition: none;
   }
 
@@ -1668,6 +1782,10 @@ body {
     );
     box-shadow: 0 0 1rem color-mix(in srgb, var(--color-primary) 20%, transparent);
     content: "";
+    transform: scaleY(0);
+    transform-origin: top center;
+    animation: experienceTimelineDrawVertical 0.8s ease both;
+    animation-delay: 0.1s;
   }
 
   .experience-milestone {
@@ -1734,5 +1852,12 @@ body {
 
   .project-action {
     flex: 1 1 11rem;
+  }
+}
+
+@media (max-width: 40rem) and (prefers-reduced-motion: reduce) {
+  .experience-timeline::before {
+    animation: none;
+    transform: none;
   }
 }
