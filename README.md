@@ -41,3 +41,23 @@ Professional software developer portfolio showcasing my projects, technical skil
 13. [Future Improvements](#13-future-improvements)
 14. [Credits](#14-credits)
 15. [Acknowledgements](#15-acknowledgements)
+
+## 1. Project Overview
+
+The John Moran Portfolio is a personal portfolio website created to showcase my software development projects, technical skills, experience and background.
+
+The website provides a central place where recruiters and potential employers can learn more about me as a developer, explore my projects, view live applications and GitHub repositories, and download my CV.
+
+The portfolio was built using HTML, CSS and JavaScript, with a focus on creating a clean, responsive and easy-to-navigate website across desktop, tablet and mobile devices.
+
+## 2. Project Aims
+
+The main aim of this project was to create a professional portfolio that clearly presents my work and experience as I begin my career in software development.
+
+The key aims were to:
+
+- Showcase my strongest software development projects and provide access to their GitHub repositories and live applications.
+- Present my technical skills, education and professional experience in a clear and organised way.
+- Make it easy for recruiters and potential employers to view and download my CV.
+- Provide a simple way for visitors to contact me or connect through GitHub and LinkedIn.
+- Create a responsive and accessible website that works well across different screen sizes.
