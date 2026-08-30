@@ -37,7 +37,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-cta" href="documents/John-Moran-CV.pdf" download>Download CV</a>
+        <a class="nav-cta" href="documents/John-Moran-CV-S.pdf" download>Download CV</a>
       </div>
     </nav>
   </header>
@@ -55,7 +55,7 @@
 
           <div class="hero-actions">
             <a class="hero-button hero-button-primary" href="#projects">View My Projects</a>
-            <a class="hero-button hero-button-secondary" href="documents/John-Moran-CV.pdf" download>Download CV</a>
+            <a class="hero-button hero-button-secondary" href="documents/John-Moran-CV-S.pdf" download>Download CV</a>
           </div>
 
           <a class="hero-scroll" href="#about" aria-label="Scroll to About section">
@@ -345,6 +345,7 @@
               <h3 id="skills-languages-title">Languages</h3>
               <ul class="project-tech-list" role="list" aria-label="Languages">
                 <li><span class="skill-badge-icon skill-badge-icon--python" aria-hidden="true"></span><span>Python</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--typescript" aria-hidden="true"></span><span>TypeScript</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--javascript" aria-hidden="true"></span><span>JavaScript</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--sql" aria-hidden="true"></span><span>SQL</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--html5" aria-hidden="true"></span><span>HTML5</span></li>
@@ -365,9 +366,16 @@
             <div class="skills-card-content">
               <h3 id="skills-frameworks-title">Frameworks &amp; Libraries</h3>
               <ul class="project-tech-list" role="list" aria-label="Frameworks and libraries">
+                <li><span class="skill-badge-icon skill-badge-icon--fastapi" aria-hidden="true"></span><span>FastAPI</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--django" aria-hidden="true"></span><span>Django</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--react" aria-hidden="true"></span><span>React</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--vite" aria-hidden="true"></span><span>Vite</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--streamlit" aria-hidden="true"></span><span>Streamlit</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--bootstrap" aria-hidden="true"></span><span>Bootstrap 5</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--sqlalchemy" aria-hidden="true"></span><span>SQLAlchemy</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--alembic" aria-hidden="true"></span><span>Alembic</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--pydantic" aria-hidden="true"></span><span>Pydantic</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--geoalchemy2" aria-hidden="true"></span><span>GeoAlchemy2</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--pandas" aria-hidden="true"></span><span>Pandas</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--numpy" aria-hidden="true"></span><span>NumPy</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--scikitlearn" aria-hidden="true"></span><span>Scikit-learn</span></li>
@@ -390,8 +398,30 @@
               <h3 id="skills-databases-title">Databases</h3>
               <ul class="project-tech-list" role="list" aria-label="Databases">
                 <li><span class="skill-badge-icon skill-badge-icon--postgresql" aria-hidden="true"></span><span>PostgreSQL</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--postgis" aria-hidden="true"></span><span>PostGIS</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--mysql" aria-hidden="true"></span><span>MySQL</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--sqlite" aria-hidden="true"></span><span>SQLite</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--google-sheets" aria-hidden="true"></span><span>Google Sheets API</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skills-card" aria-labelledby="skills-testing-title">
+            <div class="skills-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M9 3h6"/>
+                <path d="M10 3v4.5L5.5 15a3.5 3.5 0 0 0 3 5h7a3.5 3.5 0 0 0 3-5L14 7.5V3"/>
+                <path d="M8.5 15h7"/>
+                <path d="m10.25 11.5 1.5 1.5 2-2"/>
+              </svg>
+            </div>
+            <div class="skills-card-content">
+              <h3 id="skills-testing-title">Testing &amp; Quality</h3>
+              <ul class="project-tech-list" role="list" aria-label="Testing and quality">
+                <li><span class="skill-badge-icon skill-badge-icon--pytest" aria-hidden="true"></span><span>pytest</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--vitest" aria-hidden="true"></span><span>Vitest</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--testing-library" aria-hidden="true"></span><span>React Testing Library</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--eslint" aria-hidden="true"></span><span>ESLint</span></li>
               </ul>
             </div>
           </article>
@@ -412,6 +442,12 @@
             <div class="skills-card-content">
               <h3 id="skills-tools-title">Tools &amp; Platforms</h3>
               <ul class="project-tech-list" role="list" aria-label="Tools and platforms">
+                <li><span class="skill-badge-icon skill-badge-icon--docker" aria-hidden="true"></span><span>Docker</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--docker-compose" aria-hidden="true"></span><span>Docker Compose</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--aws-ec2" aria-hidden="true"></span><span>AWS EC2</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--linux" aria-hidden="true"></span><span>Linux</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--nginx" aria-hidden="true"></span><span>Nginx</span></li>
+                <li><span class="skill-badge-icon skill-badge-icon--github-actions" aria-hidden="true"></span><span>GitHub Actions</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--git" aria-hidden="true"></span><span>Git</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--github" aria-hidden="true"></span><span>GitHub</span></li>
                 <li><span class="skill-badge-icon skill-badge-icon--vscode" aria-hidden="true"></span><span>VS Code</span></li>
@@ -623,7 +659,7 @@
               <div class="contact-card-content">
                 <h3 id="contact-cv-title">View My CV</h3>
                 <p>Download my CV to learn more about my experience, education and technical skills.</p>
-                <a href="documents/John-Moran-CV.pdf" download aria-label="Download John Moran's CV">Download CV</a>
+                <a href="documents/John-Moran-CV-S.pdf" download aria-label="Download John Moran's CV">Download CV</a>
               </div>
             </article>
           </div>
