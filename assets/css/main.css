@@ -236,9 +236,9 @@ body {
 
 .hero-container {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(23.85rem, 0.6fr);
   align-items: center;
-  gap: 4.5rem;
+  gap: 3rem;
   min-height: calc(100svh - 15rem);
 }
 
@@ -265,9 +265,10 @@ body {
   margin-top: 0.75rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .hero-subtitle span {
@@ -438,6 +439,7 @@ body {
 
   .hero-subtitle {
     font-size: 1.75rem;
+    white-space: normal;
   }
 
   .hero-media {
