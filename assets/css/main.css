@@ -2415,20 +2415,57 @@ body {
     gap: 0.35rem;
   }
 
+  .skills-grid {
+    gap: 0.875rem;
+  }
+
   .skills-card {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.5rem;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 0.75rem;
+    row-gap: 0.625rem;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .skills-card-content {
+    display: contents;
   }
 
   .skills-card-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .skills-card-icon svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .skills-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.15rem;
+  }
+
+  .skills-card .project-tech-list {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 0.3rem;
+    margin-top: 0;
+  }
+
+  .skills-card .project-tech-list li {
+    gap: 0.3rem;
+    padding: 0.225rem 0.45rem;
+    font-size: 0.7rem;
+  }
+
+  .skill-badge-icon {
+    width: 0.75rem;
+    height: 0.75rem;
   }
 
   .featured-project {
