@@ -308,6 +308,13 @@ if (contactForm) {
       return;
     }
 
+    const hCaptchaResponse = contactForm.querySelector('textarea[name="h-captcha-response"]');
+
+    if (!hCaptchaResponse || !hCaptchaResponse.value.trim()) {
+      setFeedback("Please complete the CAPTCHA.", "error");
+      return;
+    }
+
     const payload = getContactFormPayload();
     const configuration = validateWeb3FormsConfiguration(payload);
 
