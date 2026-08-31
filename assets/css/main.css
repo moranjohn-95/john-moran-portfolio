@@ -329,17 +329,17 @@ body {
   color: var(--color-primary);
 }
 
-.hero-actions .hero-button-secondary {
-  border-color: var(--color-text-primary);
-  background-color: var(--color-text-primary);
-  color: var(--color-background);
+.button-secondary-light {
+  border-color: #D8DEE8;
+  background-color: #D8DEE8;
+  color: #0F172A;
 }
 
-.hero-actions .hero-button-secondary:hover,
-.hero-actions .hero-button-secondary:focus-visible {
-  border-color: var(--color-text-secondary);
-  background-color: var(--color-text-secondary);
-  color: var(--color-background);
+.button-secondary-light:hover,
+.button-secondary-light:focus-visible {
+  border-color: #C7CFDB;
+  background-color: #C7CFDB;
+  color: #0F172A;
 }
 
 .hero-media {
@@ -1056,20 +1056,15 @@ body {
   padding-top: 1.25rem;
 }
 
-.project-actions-compact a {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-text-secondary);
+.project-actions-compact .hero-button {
+  min-height: 2.25rem;
+  padding-inline: 0.875rem;
   font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1;
-  text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-.project-actions-compact a:hover,
-.project-actions-compact a:focus-visible {
-  color: var(--color-primary);
+.project-actions-compact .project-action-icon {
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .project-status-badge {
