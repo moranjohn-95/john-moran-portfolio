@@ -2186,7 +2186,15 @@ body {
 /* Hero */
 @media (max-width: 40rem) {
   .hero {
-    padding-block: 3rem;
+    padding-block: 1rem 1.5rem;
+  }
+
+  .hero-container {
+    gap: 1.5rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.5rem;
   }
 
   .hero-title {
@@ -2194,10 +2202,12 @@ body {
   }
 
   .hero-subtitle {
+    margin-top: 0.5rem;
     font-size: 1.25rem;
   }
 
   .hero-description {
+    margin-top: 1rem;
     font-size: 0.95rem;
   }
 
@@ -2207,11 +2217,13 @@ body {
 
   .hero-media::after,
   .hero-image {
-    width: 15.9rem;
-    height: 15.9rem;
+    width: 12rem;
+    height: 12rem;
   }
 
   .hero-actions {
+    gap: 0.75rem;
+    margin-top: 1.25rem;
     flex-direction: column;
     align-items: stretch;
   }
