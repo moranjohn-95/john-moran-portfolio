@@ -2387,6 +2387,9 @@ body {
   }
 
   .featured-project {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     padding: 1rem;
   }
@@ -2404,9 +2407,14 @@ body {
     font-size: 1.25rem;
   }
 
-  .featured-project-features,
-  .projects-grid {
+  .featured-project-features {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .project-actions {
