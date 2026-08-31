@@ -1335,8 +1335,16 @@ body {
   --skill-icon: url("https://cdn.simpleicons.org/fastapi");
 }
 
+.skill-badge-icon--rest-api {
+  --skill-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2338BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' viewBox='0 0 24 24'%3E%3Cpath d='M8 7 4 12l4 5M16 7l4 5-4 5M10 19l4-14'/%3E%3C/svg%3E");
+}
+
 .skill-badge-icon--react {
   --skill-icon: url("https://cdn.simpleicons.org/react");
+}
+
+.skill-badge-icon--jquery {
+  --skill-icon: url("https://cdn.simpleicons.org/jquery");
 }
 
 .skill-badge-icon--vite {
@@ -1384,7 +1392,7 @@ body {
 }
 
 .skill-badge-icon--matplotlib {
-  --skill-icon: url("https://cdn.simpleicons.org/matplotlib");
+  --skill-icon: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg");
 }
 
 .skill-badge-icon--chartjs {
@@ -1460,7 +1468,7 @@ body {
 }
 
 .skill-badge-icon--vscode {
-  --skill-icon: url("https://cdn.simpleicons.org/visualstudiocode");
+  --skill-icon: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg");
 }
 
 .skill-badge-icon--jupyter {
@@ -1468,7 +1476,7 @@ body {
 }
 
 .skill-badge-icon--heroku {
-  --skill-icon: url("https://cdn.simpleicons.org/heroku");
+  --skill-icon: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg");
 }
 
 .skills-card .project-tech-list li:hover {
