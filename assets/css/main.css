@@ -2190,11 +2190,15 @@ body {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
   }
 
   .hero-media {
@@ -2221,7 +2225,7 @@ body {
   }
 
   .about-title {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 
   .about-copy p {
@@ -2238,15 +2242,15 @@ body {
   }
 
   .about-card h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .about-card .about-card-title-compact {
-    font-size: 1.65rem;
+    font-size: 1.4rem;
   }
 
   .about-card p {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -2270,7 +2274,7 @@ body {
   .skills-title,
   .experience-title,
   .contact-title {
-    font-size: 2.75rem;
+    font-size: 1.8rem;
   }
 
   .projects-intro,
@@ -2278,7 +2282,7 @@ body {
   .experience-intro,
   .contact-intro,
   .featured-project-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .experience-timeline {
@@ -2392,7 +2396,12 @@ body {
   }
 
   .featured-project-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .project-card h3,
+  .experience-card h3 {
+    font-size: 1.25rem;
   }
 
   .featured-project-features,
