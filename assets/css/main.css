@@ -551,7 +551,7 @@ body {
   width: 100%;
   min-height: 17rem;
   flex-direction: column;
-  padding: 2.5rem 2.25rem;
+  padding: 2.5rem 1.75rem;
   border: 1px solid rgba(51, 65, 85, 0.82);
   border-radius: 1rem;
   background-color: rgba(15, 23, 42, 0.42);
@@ -589,7 +589,7 @@ body {
   margin-top: 2rem;
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
-  font-size: clamp(1.875rem, 3vw, 2.75rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
   font-weight: 700;
   line-height: 1.12;
 }
@@ -600,7 +600,7 @@ body {
 }
 
 .about-card .about-card-title-compact {
-  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.15vw, 2rem);
 }
 
 .about-card .about-card-title-compact + p {
@@ -648,15 +648,15 @@ body {
 
   .about-card {
     min-height: 14rem;
-    padding: 2rem;
+    padding: 2rem 1.75rem;
   }
 
   .about-card h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .about-card .about-card-title-compact {
-    font-size: 1.875rem;
+    font-size: 1.65rem;
   }
 
   .about-card p {
