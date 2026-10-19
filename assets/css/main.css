@@ -693,6 +693,23 @@ body {
   visibility: visible;
 }
 
+.project-preview--job-comparer {
+  aspect-ratio: auto;
+}
+
+.project-preview--job-comparer::before {
+  content: none;
+}
+
+.project-preview-image--job-comparer {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
 .project-preview-video {
   z-index: 2;
   opacity: 0;
